@@ -1,0 +1,584 @@
+/* GLOBAL */
+
+* {
+	box-sizing: border-box;
+}
+img {
+	max-width: 100%;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.6rem;
+	font-family: 'Open Sans', Arial, sans-serif;
+	line-height: 1.18em;
+	background-color: #F2F2F2;
+	color: #666;
+}
+small {
+	font-size: smaller;
+}
+a {
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+	font-family: 'Amaranth', sans-serif;
+	margin-bottom: 1em;
+}
+h1 {
+	font-size: 4rem;
+}
+h2 {
+	font-size: 2.5rem;
+}
+h3 {
+	font-size: 2rem;
+}
+p {
+	margin: 1em 0;
+}
+
+.clearfix {
+	display: block;
+	clear: both;
+}
+.container {
+	max-width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.btn {
+	text-transform: uppercase;
+	color: #fff;
+	background-color: rgba(176, 144, 103, 1);
+	transition: background 0.8s ease;
+	padding: 15px 20px;
+	border: none;
+	display: inline-block;
+	letter-spacing: 2px;
+	opacity: 1;
+}
+.btn:hover, .btn:focus {
+	background-color: rgba(176, 144, 103, 0.75);
+}
+
+.price span {
+	display: block;
+	font-family: 'Amaranth', sans-serif;
+	font-size: 2.4rem;
+}
+
+.green span {
+	color: #96B011;
+	background-color: #fff;
+	padding: 0 5px;
+}
+.green:after {
+	content: ' ';
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid #96B011;
+	margin-top: -0.7em;
+}
+
+
+
+.three-cols {
+	display: flex;
+	flex-flow: row wrap;
+	text-align: center;
+	justify-content: space-between;
+}
+.three-cols article {
+	width: 100%;
+}
+
+.presentoir {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.presentoir a {
+	width: 50%;
+	text-align: center;
+}
+
+
+
+/* HEADER, FOOTER */
+
+header, footer {
+	background-image: url('../img/bg.jpg');
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-color: #96B011;
+	text-align: center;
+	color: #fff;
+}
+header a, footer a {
+	color: #fff;
+}
+header strong,
+footer small,
+footer section {
+	background-color: rgba(0, 0, 0, .1);
+}
+
+
+
+
+/* HEADER */
+header strong, header nav {
+	width: 100%;
+}
+header strong {
+	display: block;
+	font-size: 1.7rem;
+	padding: 8px 0;
+	margin-bottom: 60px;
+}
+header strong img {
+	display: none;
+	width: 9%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+
+/* PANIER */
+#shopping_cart span {
+	display: none;
+}
+#shopping_cart .fa {
+	padding: 9px;
+	border-radius: 50%;
+	border: 1px solid rgba(255,255,255, 0.6);
+	color: rgba(255,255,255, 0.6);
+	font-size: 2rem;
+}
+#shopping_cart .price {
+	display: inline;
+	font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+	#shopping_cart {
+		position: fixed;
+		left: 0;
+		top: 50px;
+		padding: 4px 10px;
+		background-color: #96B011;
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+		box-shadow: 0 0 4px 1px rgba(0,0,0,0.1);
+		z-index: 1; /*on veut qu'il reste au dessus des thés*/
+	}
+	#shopping_cart .price {
+		font-size: 1.4rem;
+	}
+	#shopping_cart .fa {
+		font-size: 1.8rem;
+	}
+}/*on est techniquement en mobile first mais c'est plus simple de créer un exception pour le mobile ici que de remettre tout ça par défaut en tablettte*/
+
+
+/* NAVIGATION */
+header nav {
+	display: flex;
+	flex-direction: column;
+	padding: 30px 15px;
+}
+header nav a {
+	display: block;
+	padding: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: background 0.5s ease;
+}
+header nav a:hover, header nav a:focus {
+	background-color: rgba(255,255,255,0.2);
+}
+
+
+
+
+/* MAIN CONTENT */
+main {
+	line-height: 1.6;
+	margin-bottom: 40px;
+}
+main section {
+	background-color: #fff;
+	padding: 20px 15px;
+	margin: 20px 0;
+}
+main section article {
+	margin-bottom: 20px;
+}
+/* Correction pour pages produit & about */
+main.white {
+	background-color: #fff;
+	padding: 40px 15px;
+}
+main.white section {
+	padding: 0 15px;
+}
+
+main strong {
+	font-weight: bold;
+}
+
+/* INDEX */
+#home {
+	text-align: center;
+}
+/*Offre et slider*/
+#advertising {
+	display: none;
+	background-color: transparent;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+#advertising h1 {
+	color: #96B011;
+}
+#advertising figcaption {
+	font-size: 1rem;
+}
+#advertising figure {
+	margin-bottom: 25px;
+}
+/*Choisissez votre thé*/
+main .presentoir a {
+	color: #666;
+	transition: opacity 0.8s ease;
+}
+main .presentoir:hover a {
+	opacity: 0.5;
+}
+main .presentoir a:hover {
+	opacity: 1;
+}
+
+
+/* LISTING */
+.vignette {
+	float: left;
+	display: none;
+}
+.three-cols article h3 {
+	margin-bottom: 0;
+}
+
+/* ABOUT */
+#about {
+	padding-bottom: 15px;
+}
+
+#about section img {
+	display: block;
+	margin: 1em auto;
+}
+
+#about aside {
+	background-color: #EAEFCF;
+	padding: 15px;
+	text-align: center;
+}
+#about section aside img {
+	width: 150px;
+	margin: 1em;
+	display: inline-block;
+}
+
+/* PRODUIT */
+
+.product a {
+	color: #879F0F;
+	opacity: .8;
+}
+.product a:hover, .product a:focus {
+	opacity: 1;
+}
+.product div,
+.product form,
+.product figure {
+	text-align: center;
+}
+
+.product h1 {
+	font-size: 3rem;
+	margin: 0;
+}
+.product h3 {
+	margin: 0;
+}
+.reference {
+	font-style: italic;
+}
+.product .fa-star {
+	font-size: 2rem;
+}
+.fa-star.yellow {
+	color: #FFDC10;
+}
+
+.product>div:nth-of-type(2) p {
+	margin: 0;
+}
+
+.product select,
+.product button {
+	width: 100%;
+	font-size: 1.6rem;
+}
+.product select {
+	padding: 10px 2px;
+}
+.product form .price {
+	font-size: 4rem;
+	margin: 0 0 1em;
+}
+.product form .fa-heart {
+	color: #E48879;
+}
+
+/* FOOTER */
+footer {
+	font-size: 1.4rem;
+}
+footer section,
+footer nav,
+footer small {
+	padding: 20px 15px;
+}
+footer a {
+	color: rgba(255,255,255,0.6);
+	transition: color 0.5s ease;
+}
+footer a:hover, footer a:focus {
+	color: rgba(255,255,255,1);
+}
+
+footer section a {
+	display: flex;
+	flex-direction: column;
+	text-transform: uppercase;
+	padding: 5px 15px;
+}
+footer .fa {
+	font-size: 2.6rem;
+	margin-bottom: 0.5em;
+}
+
+footer nav li {
+	padding: 5px 0;
+}
+footer nav h3 {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	margin: 1em 0;
+}
+
+footer small {
+	display: block;
+}
+footer small img {
+	width: 50px;
+}
+
+
+/* VERSION TABLETTE */
+
+@media screen and (min-width: 769px) {
+	.presentoir a {
+		width: 30%;
+	}
+
+	header strong {
+		margin-bottom: 30px;
+	}
+	header strong img {
+		display: inline;
+	}
+	header div {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		padding: 0 15px;
+	}
+	header nav {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	#shopping_cart span {
+		display: inline;
+	}
+
+	#advertising {
+		display: block;
+	}
+
+	#about section:first-of-type article:nth-of-type(even) img:nth-of-type(even),
+	#about section:first-of-type article:nth-of-type(odd) img:nth-of-type(odd) {
+		float: left;
+	}
+	#about section:first-of-type article:nth-of-type(even) img:nth-of-type(odd),
+	#about section:first-of-type article:nth-of-type(odd) img:nth-of-type(even) {
+		float: right;
+	}
+	#about section img {
+		margin: 1em;
+	}
+
+	.product>figure,
+	.product>form,
+	.product>div {
+		display: inline-block;
+		vertical-align: top;
+	}
+	.product>div {
+		width: 49%;
+	}
+	.product>form {
+		width: 39%;
+	}
+	.product>figure {
+		width: 60%;
+	}
+	 
+	.product>div:first-of-type,
+	.product>figure {
+		text-align: left;
+	}
+	.product>div:nth-of-type(2),
+	.product>form {
+		text-align: right;
+	}
+
+	footer .presentoir {
+		justify-content: space-between;
+		flex-wrap: nowrap;
+	}
+	footer .presentoir a {
+		width: auto;
+	}
+	footer nav>ul {
+		display: flex;
+		justify-content: space-around;
+	}
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) {
+	.three-cols article {
+		width: 30%;
+	}
+	.presentoir {
+		justify-content: space-between;
+		flex-wrap: nowrap;
+	}
+	.presentoir a {
+		width: auto;
+	}
+
+	img.vignette {
+		display: inline;
+	}
+	.vignette + h2 {
+		text-indent: 0.5em;
+	}
+
+	.product form {
+		width: 35%;
+	}
+	.product figure {
+		width: 64%;
+	}
+}
+
+/* MENU HAMBURGER */
+/*reset for other format*/
+#nav-ouverte {
+	width: 100%;
+}
+#nav-burger .toNav,
+#nav-burger .toBurger {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	/*on modifie la maquette: le panier est endessous du logog, le lien pour le menu burger en face*/	
+	#shopping_cart {
+		top: 145px;
+	}
+	header strong {
+		margin-bottom: 30px;
+	}
+	header>div:first-of-type {
+		padding-bottom: 70px;
+	}
+
+	/*styling les burgers*/
+	#nav-burger .toNav,
+	#nav-burger .toBurger {
+		position: absolute;
+		top: 140px;
+	    right: 15px;
+	    display: inline;
+	    font-size: 3rem;
+	    padding: 8px;
+	    border: 2px solid #fff;
+	    border-radius: 8px;
+	}
+	
+
+	/* status default */
+	#nav-burger .toBurger {
+		display: none;
+	}
+	header nav {
+		display: none;
+		padding-top: 10px;
+	}
+
+	/* ouverture nav et échange burger affiché*/
+	#nav-ouverte:target nav {
+		display: flex;
+	}
+	#nav-ouverte:target .toBurger {
+		display: inline;
+	}
+	#nav-ouverte:target .toNav {
+		display: none;
+	}
+
+	/*prevent scrolling*/
+	#nav-burger:target {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-top: 202px;
+		width: 100%;
+	}
+	#nav-ouverte:target {
+		padding-top: 202px;
+		margin-top: -202px;
+	}
+
+	/*le changement de psition du background est dérangeant */
+	header {
+		background-image: none;
+	}
+	header nav {
+		background-image: url('../img/bg.jpg');
+		background-position: top center;
+	}
+}
+
